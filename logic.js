@@ -42,9 +42,10 @@ function click(row, col) {
 function CheckWinner() {
 
     let activeSymbol = players[activePlayer];
-    
+
     let count = 0;
-    for (let i = 0; i < board.length; i++) {
+    let length = board.length - 1;
+    for (let i = 0; i <= length; i++) {
         count = board[i][i] === activeSymbol ? ++count : 0 // 
         if (count === 3) {
             return true;
@@ -52,16 +53,16 @@ function CheckWinner() {
     };
 
     count = 0;
-    for (let i = 0; i < board.length; i++) {
-        count = board[i][board.length - i] === activeSymbol ? ++count : 0 // 
+    for (let i = 0; i <= length; i++) {
+        count = board[i][length - i] === activeSymbol ? ++count : 0 // 
         if (count === 3) {
             return true;
         }
     };
 
     count = 0;
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board.length; j++) {
+    for (let i = 0; i <= length; i++) {
+        for (let j = 0; j <= length; j++) {
             count = board[i][j] === activeSymbol ? ++count : 0 // 
             if (count === 3) {
                 return true;
@@ -70,8 +71,8 @@ function CheckWinner() {
     };
 
     count = 0;
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board.length; j++) {
+    for (let i = 0; i <= length; i++) {
+        for (let j = 0; j <= length; j++) {
             count = board[j][i] === activeSymbol ? ++count : 0 // 
             if (count === 3) {
                 return true;
