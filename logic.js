@@ -68,6 +68,7 @@ function CheckWinner() {
                 return true;
             }
         };
+        count = 0;
     };
 
     count = 0;
@@ -78,9 +79,11 @@ function CheckWinner() {
                 return true;
             }
         };
+        count = 0;
     };
 
     return false;
+    
 }
 
 function refreshBoard() {
